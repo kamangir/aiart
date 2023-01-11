@@ -18,7 +18,7 @@ function aiart() {
     fi
 
     if [ "$task" == "version" ] ; then
-        abcli_log $(python3 -m aiart version ${@:2})
+        python3 -m aiart version ${@:2}
         return
     fi
 

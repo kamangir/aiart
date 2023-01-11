@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+function aiart_generate() {
+    local task=$(abcli_unpack_keyword $1 help)
+
+    if [ $task == "help" ] ; then
+        local options=$2
+
+        aiart_generate_image $task,$options
+        aiart_generate_video $task,$options
+        aiart_generate_validate $task,$options
+
+        return
+    fi
+
+    local function_name="aiart_generate_$1"
+    if [[ $(type -t $function_name) == "function" ]] ; then
+        $function_name "${@:2}"
+        return
+    fi
+
+    abcli_log_error "-aiart: generate: $task: command not found."
+}
+
+abcli_source_path $abcli_path_git/aiart/.abcli/generate
