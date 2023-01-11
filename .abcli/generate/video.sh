@@ -28,7 +28,7 @@ function aiart_generate_video() {
         curl "$2" --output $input_filename
     fi
 
-    python3 -m blue_stability.script \
+    python3 -m aiart.script \
         flatten \
         --filename $input_filename \
         --frame_count $frame_count \

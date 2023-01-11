@@ -1,1 +1,1 @@
-NAME = "blue_stability.image"
+NAME = "aiart.image"

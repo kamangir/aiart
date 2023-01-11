@@ -30,8 +30,8 @@ function aiart_generate_image() {
 
     eval ${app_name}_generate_function \
         "$options" \
-        $filename \
-        $prev_filename \
+        "$filename" \
+        "$prev_filename" \
         "$sentence"
 
     if [ "$dryrun" == 1 ] ; then
