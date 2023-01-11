@@ -28,11 +28,12 @@ function aiart_generate_image() {
 
     mkdir -p $abcli_object_path/raw
 
-    eval ${app_name}_generate_function \
+    ${app_name}_generate_function \
         "$options" \
         "$filename" \
         "$prev_filename" \
-        "$sentence"
+        "$sentence" \
+        ${@:5}
 
     if [ "$dryrun" == 1 ] ; then
         return
