@@ -28,7 +28,7 @@ function aiart_generate_image() {
 
     mkdir -p $abcli_object_path/raw
 
-    ${app_name}_generate_function \
+    eval ${app_name}_generate_function \
         "$options" \
         $filename \
         $prev_filename \
