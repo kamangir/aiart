@@ -54,7 +54,7 @@ function aiart_generate_image() {
     else
         local footer=""
     fi
-    local footer="$footer | ${@:5}"
+    local footer="$($app_name version) | $footer | ${@:5}"
 
     python3 -m abcli.modules.host \
         add_signature \
