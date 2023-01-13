@@ -5,19 +5,22 @@ function aiart_generate_video() {
     local app_name=$(abcli_option "$options" app aiart)
 
     if [ $(abcli_option_int "$options" help 0) == 1 ] ; then
-        abcli_show_usage "$app_name generate video$ABCUL[app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,url]$ABCUL<filename.txt|url>$ABCUL[--width 768 --height 576 --seed 42 --start_schedule 0.9]" \
+        local args=$(abcli_option "$options" video.args -)
+
+        local args=$(echo $args | tr + "-" | tr @ " ")
+        local options="app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,~upload,url"
+        abcli_show_usage "$app_name generate video$ABCUL[$options]$ABCUL<filename.txt|url>$ABCUL[$args]" \
             "<filename.txt>|url -> video.mp4"
         return
     fi
 
-    local is_url=$(abcli_option_int "$options" url 0)
-    local frame_count=$(abcli_option_int "$options" frame_count -1)
-    local marker=$(abcli_option "$options" marker)
     local dryrun=$(abcli_option_int "$options" dryrun 1)
     local do_publish=$(abcli_option_int "$options" publish $(abcli_not $dryrun))
     local do_render=$(abcli_option_int "$options" render $(abcli_not $dryrun))
-
-    local options=$(abcli_option_default "$options" tag 0)
+    local do_upload=$(abcli_option_int "$options" upload $(abcli_not $dryrun))
+    local frame_count=$(abcli_option_int "$options" frame_count -1)
+    local is_url=$(abcli_option_int "$options" url 0)
+    local marker=$(abcli_option "$options" marker)
 
     local input_filename=$2
 
@@ -34,6 +37,8 @@ function aiart_generate_video() {
         --frame_count $frame_count \
         --marker "$marker"
 
+    local options=$(abcli_option_default "$options" tag 0)
+
     local i=0
     local sentence
     local filename=""
@@ -46,7 +51,7 @@ function aiart_generate_video() {
         local previous_filename=$filename
         local filename=$(python3 -c "print(f'{$i:010d}')")
 
-        blue_stability generate image \
+        $app_name generate image \
             "$options" \
             "$filename" \
             "$previous_filename" \
@@ -67,7 +72,7 @@ function aiart_generate_video() {
         local options=$(abcli_option_default "$options" rm_frames 0)
         local options=$(abcli_option_default "$options" resize_to $ABCLI_VIDEO_DEFAULT_SIZE)
 
-        abcli_log "blue-stability: video: $options"
+        abcli_log "$app_name: video: $options"
         abcli_create_video \
             .png \
             video \
@@ -82,9 +87,11 @@ function aiart_generate_video() {
             video.gif
     fi
 
-    if [ "$do_publish" == 1 ] ; then
+    if [ "$do_upload" == 1 ] ; then
         abcli_upload
+    fi
 
+    if [ "$do_publish" == 1 ] ; then
         abcli_publish \
             $abcli_object_name \
             video.gif

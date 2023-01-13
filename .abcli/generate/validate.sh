@@ -25,17 +25,14 @@ function aiart_generate_validate() {
         $app_name generate image \
             dryrun=$dryrun \
             validation - \
-            "an orange carrot walking on Mars." \
-            --seed 42
+            "an orange carrot walking on Mars."
         return
     fi
 
     if [ "$what" == "video" ] ; then
         $app_name generate video \
             dryrun=$dryrun,frame_count=3,marker=PART,url \
-            https://www.gutenberg.org/cache/epub/51833/pg51833.txt \
-            --seed 42 \
-            --start_schedule 0.9
+            https://www.gutenberg.org/cache/epub/51833/pg51833.txt
         return
     fi
 

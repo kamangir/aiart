@@ -5,7 +5,11 @@ function aiart_transform() {
     local app_name=$(abcli_option "$options" app aiart)
 
     if [ $(abcli_option_int "$options" help 0) == 1 ] ; then
-        abcli_show_usage "$app_name transform$ABCUL[count=<1>,~dryrun,extension=jpg,~sign,~tag,~upload]$ABCUL[<object-name>]$ABCUL[\"<sentence>\"]$ABCUL[--width 768 --height 576 --seed 42 --start_schedule 0.9]" \
+        local args=$(abcli_option "$options" video.args -)
+
+        local args=$(echo $args | tr + "-" | tr @ " ")
+        local options="count=<1>,~dryrun,extension=jpg,~sign,~tag,~upload"
+        abcli_show_usage "$app_name transform$ABCUL[$options]$ABCUL[<object-name>]$ABCUL[\"<sentence>\"]$ABCUL[$args]" \
             "<object-name> -<sentence>-> $abcli_object_name."
         return
     fi
