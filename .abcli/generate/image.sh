@@ -39,6 +39,11 @@ function aiart_generate_image() {
         return
     fi
 
+    cp -v \
+        $abcli_object_path/raw/$filename.png \
+        $abcli_object_path/$filename.png
+
+
     if [ "$do_tag" == 1 ] ; then
         abcli_tag set \
             $abcli_object_name \
