@@ -54,17 +54,10 @@ function aiart_generate_image() {
             $app_name
     fi
 
+    local footer=""
     if [ "$do_sign" == 1 ] ; then
         local footer=$sentence
-
-        if [ -z "$prev_filename" ] ; then
-            local footer="* $footer"
-        fi
-    else
-        local footer=""
     fi
-    local footer="$($app_name version) | $footer | ${@:5}"
-
     python3 -m abcli.modules.host \
         add_signature \
         --application $($app_name version) \
