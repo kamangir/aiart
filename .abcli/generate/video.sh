@@ -72,7 +72,6 @@ function aiart_generate_video() {
         local options=$(abcli_option_default "$options" rm_frames 0)
         local options=$(abcli_option_default "$options" resize_to $ABCLI_VIDEO_DEFAULT_SIZE)
 
-        abcli_log "$app_name: video: $options"
         abcli_create_video \
             .png \
             video \
