@@ -22,6 +22,7 @@ function aiart_generate_validate() {
     fi
 
     if [ "$what" == "image" ] ; then
+        abcli_select
         $app_name generate image \
             dryrun=$dryrun \
             validation - \
@@ -30,8 +31,9 @@ function aiart_generate_validate() {
     fi
 
     if [ "$what" == "video" ] ; then
+        abcli_select
         $app_name generate video \
-            dryrun=$dryrun,frame_count=3,marker=PART,url \
+            dryrun=$dryrun,frame_count=3,marker=PART,~publish,~upload,url \
             https://www.gutenberg.org/cache/epub/51833/pg51833.txt
         return
     fi
