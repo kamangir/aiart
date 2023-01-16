@@ -61,6 +61,8 @@ elif args.task == "convert_to_RGBA":
     image.save(args.destination)
 
     logger.info(f"{args.source} -RGBA-> {args.destination}")
+
+    success = True
 else:
     logger.error(f"-{NAME}: {args.task}: command not found.")
 
