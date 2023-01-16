@@ -13,7 +13,7 @@ parser.add_argument(
     "task",
     type=str,
     default="",
-    help="convert",
+    help="convert|convert_to_RGBA",
 )
 parser.add_argument(
     "--destination",
@@ -50,6 +50,17 @@ if args.task == "convert":
 
     if success:
         logger.info(f"{args.source} -{args.height}x{args.width}> {args.destination}")
+elif args.task == "convert_to_RGBA":
+    # https://chat.openai.com/chat/c15fe2ad-cd5b-4218-8f05-21e5443775b8
+    from PIL import Image
+
+    image = Image.open(args.source)
+
+    image = image.convert("RGBA")
+
+    image.save(args.destination)
+
+    logger.info(f"{args.source} -RGBA-> {args.destination}")
 else:
     logger.error(f"-{NAME}: {args.task}: command not found.")
 
