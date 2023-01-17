@@ -22,7 +22,7 @@ parser.add_argument(
 parser.add_argument(
     "--height",
     type=int,
-    default=512,
+    default=-1,
 )
 parser.add_argument(
     "--source",
@@ -31,7 +31,7 @@ parser.add_argument(
 parser.add_argument(
     "--width",
     type=int,
-    default=512,
+    default=-1,
 )
 # important that unknown args are ignored.
 args, _ = parser.parse_known_args()
@@ -39,14 +39,15 @@ args, _ = parser.parse_known_args()
 success = False
 if args.task == "convert":
     success, image = file.load_image(args.source)
+
     if success:
-        success = file.save_image(
-            args.destination,
-            cv2.resize(
+        if args.width != -1 and args.height != -1:
+            image = cv2.resize(
                 image,
                 (args.width, args.height),
-            ),
-        )
+            )
+
+        success = file.save_image(args.destination, image)
 
     if success:
         logger.info(f"{args.source} -{args.height}x{args.width}> {args.destination}")
@@ -57,6 +58,12 @@ elif args.task == "convert_to_RGBA":
     image = Image.open(args.source)
 
     image = image.convert("RGBA")
+
+    data = image.getdata()
+
+    new_data = [(r, g, b, 0) for r, g, b, a in data]
+
+    image.putdata(new_data)
 
     image.save(args.destination)
 
