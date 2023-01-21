@@ -13,7 +13,7 @@ function aiart() {
 
     local function_name=aiart_$task
     if [[ $(type -t $function_name) == "function" ]] ; then
-        $function_name ${@:2}
+        $function_name "${@:2}"
         return
     fi
 
