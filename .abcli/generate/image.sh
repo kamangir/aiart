@@ -38,6 +38,9 @@ function aiart_generate_image() {
         "$prev_filename" \
         "$sentence" \
         ${@:5}
+    if [ $? -ne 0 ]; then
+        return
+    fi
 
     if [ "$dryrun" == 1 ] ; then
         return
