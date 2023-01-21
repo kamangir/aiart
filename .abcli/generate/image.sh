@@ -39,7 +39,7 @@ function aiart_generate_image() {
         "$sentence" \
         ${@:5}
     if [ $? -ne 0 ]; then
-        return
+        return 1
     fi
 
     if [ "$dryrun" == 1 ] ; then
