@@ -2,7 +2,7 @@
 
 function aiart_generate_image() {
     local options=$1
-    local app_name=$(abcli_option "$options" app aiart)
+    local app_name=$(abcli_option "$options" app openai)
 
     if [ $(abcli_option_int "$options" help 0) == 1 ] ; then
         local args=$(abcli_option "$options" image.args -)
