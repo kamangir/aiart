@@ -42,6 +42,7 @@ function aiart_generate_video() {
     local i=0
     local sentence
     local filename=""
+    local success=true
     while IFS= read -r sentence ; do
         if [ -z "$sentence" ] ; then
             local filename=""
@@ -58,8 +59,16 @@ function aiart_generate_video() {
             "$sentence" \
             ${@:3}
 
+        if [ $? -ne 0 ]; then
+            local success=false
+            break
+        fi
+
         ((i=i+1))
     done < "$input_filename"
+    if [ "$success" == false ] ; then
+        return 1
+    fi
 
     if [ "$dryrun" == 0 ] ; then
         abcli_tag set \
