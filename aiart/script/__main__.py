@@ -27,6 +27,11 @@ parser.add_argument(
     "--marker",
     type=str,
 )
+parser.add_argument(
+    "--slice_by",
+    type=str,
+    default="sentences",
+)
 args = parser.parse_args()
 
 success = False
@@ -35,6 +40,7 @@ if args.task == "flatten":
         args.filename,
         args.frame_count,
         args.marker,
+        args.slice_by,
     )
 else:
     logger.error(f"-{NAME}: {args.task}: command not found.")
