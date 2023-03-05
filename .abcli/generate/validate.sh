@@ -34,7 +34,8 @@ function aiart_generate_validate() {
         abcli_select
         $app_name generate video \
             dryrun=$dryrun,frame_count=3,marker=PART,~publish,~upload,url \
-            https://www.gutenberg.org/cache/epub/51833/pg51833.txt
+            https://www.gutenberg.org/cache/epub/51833/pg51833.txt \
+            "${@:2}"
         return
     fi
 
