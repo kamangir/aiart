@@ -14,6 +14,7 @@ def flatten(
     filename,
     frame_count=-1,
     marker="",
+    slice_by="sentences",
 ):
     success, script = file.load_text(filename)
     if not success:
@@ -80,6 +81,17 @@ def flatten(
 
     script = [line[:120] for line in script]
 
+    if slice_by == "words":
+        script_ = []
+        prev_line = ""
+        for line in script:
+            if prev_line:
+                script_ += line.split(" ")
+            else:
+                script_ += [line]
+            prev_line = line
+        script = script_
+
     if frame_count != -1:
         script_ = []
         for line in script:
@@ -108,6 +120,6 @@ def flatten(
         return False
 
     logger.info(
-        f"{NAME}.flatten: {filename} - {len(script)} lines(s), started at {marker}"
+        f"{NAME}.flatten: {filename} - {len(script)} lines(s), started at {marker} - sliced by {slice_by}"
     )
     return True

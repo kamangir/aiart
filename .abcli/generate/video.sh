@@ -8,7 +8,7 @@ function aiart_generate_video() {
         local args=$(abcli_option "$options" video.args -)
 
         local args=$(echo $args | tr + "-" | tr @ " ")
-        local options="app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,~upload,url"
+        local options="app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url"
         abcli_show_usage "$app_name generate video$ABCUL[$options]$ABCUL<filename.txt|url>$ABCUL[$args]" \
             "<filename.txt>|url -> video.mp4"
         return
@@ -21,6 +21,7 @@ function aiart_generate_video() {
     local frame_count=$(abcli_option_int "$options" frame_count -1)
     local is_url=$(abcli_option_int "$options" url 0)
     local marker=$(abcli_option "$options" marker)
+    local slice_by=$(abcli_option "$options" slice_by sentences)
 
     local input_filename=$2
 
@@ -35,6 +36,7 @@ function aiart_generate_video() {
         flatten \
         --filename $input_filename \
         --frame_count $frame_count \
+        --slice_by $slice_by \
         --marker "$marker"
 
     local options=$(abcli_option_default "$options" tag 0)
