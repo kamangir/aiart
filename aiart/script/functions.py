@@ -72,12 +72,15 @@ def flatten(
 
     script = [line for line in script if not line.startswith("linkbacks")]
 
-    # No single word line
+    # no single-word lines.
     script = [
         line
         for line in script
         if len(line.split(" ")) > 1 or len(line.replace(" ", "")) == 0
     ]
+
+    # no numbers and spaces.
+    script = [line for line in script if not re.match(r"^[\d\s]+$", line)]
 
     script = [line[:120] for line in script]
 
