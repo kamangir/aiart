@@ -37,5 +37,5 @@ def ingest_url(url):
 
         return True, [title] + poem_body
     except:
-        crash_report()
+        crash_report(f"aiart.html: ingest_url({url})")
         return False, []
