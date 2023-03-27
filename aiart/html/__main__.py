@@ -12,12 +12,8 @@ parser.add_argument(
     "task",
     type=str,
     default="",
-    help="create_html",
+    help="create",
 )
-args = parser.parse_args()
-
-
-success = False
 parser.add_argument(
     "--generator",
     type=str,
@@ -29,6 +25,9 @@ parser.add_argument(
     type=str,
     default="",
 )
+args = parser.parse_args()
+
+success = False
 if args.task == "create":
     success = create_html(
         args.working_folder,
