@@ -24,4 +24,9 @@ function aiart_create_html() {
             $abcli_object_name \
             report.html
     fi
+
+    abcli_tag set \
+        $abcli_object_name \
+        $generator,aiart
+
 }
