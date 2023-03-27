@@ -23,6 +23,9 @@ function aiart_create_html() {
         abcli_publish \
             $abcli_object_name \
             report.html
+        abcli_publish \
+            $abcli_object_name \
+            $generator.png
 
         abcli_tag set \
             $abcli_object_name \
