@@ -23,10 +23,13 @@ function aiart_create_html() {
         abcli_publish \
             $abcli_object_name \
             report.html
+
+        abcli_tag set \
+            $abcli_object_name \
+            published
     fi
 
     abcli_tag set \
         $abcli_object_name \
         $generator,aiart
-
 }
