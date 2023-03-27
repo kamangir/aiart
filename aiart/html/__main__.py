@@ -29,7 +29,7 @@ parser.add_argument(
     type=str,
     default="",
 )
-if args.task == "create_html":
+if args.task == "create":
     success = create_html(
         args.working_folder,
         args.generator,
