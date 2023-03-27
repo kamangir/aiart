@@ -75,6 +75,9 @@ def ingest_url(url):
 
         soup = BeautifulSoup(response.content, "html.parser")
 
+        for br in soup.find_all("br"):
+            br.replace_with("\n")
+
         title = soup.find("h1", {"class": "title"}).text.strip()
 
         poem_body = (
@@ -85,7 +88,11 @@ def ingest_url(url):
         )
 
         logger.info(
-            "{}: {} line(s): {}".format(title, len(poem_body), ", ".join(poem_body))
+            "{}: {} line(s):\n{}".format(
+                title,
+                len(poem_body),
+                "\n".join(poem_body),
+            )
         )
 
         return True, [title] + poem_body
