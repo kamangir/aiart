@@ -9,4 +9,4 @@ Tools for [Stable Diffusion](https://github.com/kamangir/blue-stability) and [Op
 
 | [DALL-E](https://github.com/kamangir/openai/blob/main/.abcli/DALLE.sh) |
 |---|
-| ![image](https://github.com/kamangir/openai/raw/main/assets/8088.png?raw=1) |
+| ![image](https://github.com/kamangir/openai/raw/main/assets/DALL-E.png?raw=1) |
