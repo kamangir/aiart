@@ -87,11 +87,13 @@ def ingest_url(url):
             .split("\n")
         )
 
+        poem_body = [line for line in poem_body if line]
+
         logger.info(
             "{}: {} line(s):\n{}".format(
                 title,
                 len(poem_body),
-                "\n".join([line for line in poem_body if line]),
+                "\n".join(poem_body),
             )
         )
 
