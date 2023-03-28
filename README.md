@@ -7,3 +7,6 @@ Tools for [Stable Diffusion](https://github.com/kamangir/blue-stability) and [Op
 | ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/carrot.png?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/openai/main/assets/carrot.png?raw=1) |
 | ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/minds.gif?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/openai/main/assets/minds.gif?raw=1) |
 
+| [DALL-E](https://github.com/kamangir/openai/blob/main/.abcli/DALLE.sh) |
+|---|
+| ![image](https://github.com/kamangir/openai/raw/main/assets/8088.png?raw=1) |
