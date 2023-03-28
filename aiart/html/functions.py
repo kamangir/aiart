@@ -91,7 +91,7 @@ def ingest_url(url):
             "{}: {} line(s):\n{}".format(
                 title,
                 len(poem_body),
-                "\n".join(poem_body),
+                "\n".join([line for line in poem_body if line]),
             )
         )
 
