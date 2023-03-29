@@ -10,8 +10,8 @@ function aiart() {
         abcli_show_usage "abcli_unquote <message>" \
             "urllib.parse.unquote(<message>)."
 
-        aiart_create_html "$@"
         aiart_generate help app=aiart
+        aiart_package "$@"
         aiart_transform "$@"
 
         if [ "$(abcli_keyword_is $2 verbose)" == true ] ; then

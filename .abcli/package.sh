@@ -1,9 +1,9 @@
-function aiart_create_html() {
+function aiart_package() {
     local task=$(abcli_unpack_keyword $1 help)
 
     if [ $task == "help" ] ; then
-        abcli_show_usage "aiart create_html$ABCUL[generator=$AIART_GENERATOR_LIST,publish]" \
-            "create [and publish] html."
+        abcli_show_usage "aiart package$ABCUL[generator=$AIART_GENERATOR_LIST,publish]" \
+            "package $abcli_object_name."
         return
     fi
 
