@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 def create_html(
     working_folder,
     generator,
+    template="basic",
 ):
     table_mode = generator != "DALL-E"
 
@@ -41,7 +42,7 @@ def create_html(
     success, html_content = file.load_text(
         os.path.join(
             os.getenv("abcli_path_git", ""),
-            "aiart/templates/DALL-E.html",
+            f"aiart/templates/{template}.html",
         ),
     )
     if not success:
