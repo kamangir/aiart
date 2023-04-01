@@ -23,7 +23,8 @@ def create_html(
     table_mode = generator != "DALL-E"
 
     logger.info(
-        "aiart.create_html({}): {}{}".format(
+        "aiart.create_html({}:{}): {}{}".format(
+            template,
             generator,
             working_folder,
             " - [table]" if table_mode else "",
