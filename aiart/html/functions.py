@@ -18,29 +18,15 @@ logger = logging.getLogger(__name__)
 def create_html(
     working_folder,
     generator,
-    template="basic",
+    template="double",
 ):
-    table_mode = generator != "DALL-E"
-
     logger.info(
-        "aiart.create_html({}:{}): {}{}".format(
+        "aiart.create_html({}:{}): {}".format(
             template,
             generator,
             working_folder,
-            " - [table]" if table_mode else "",
         )
     )
-
-    object_name = path.name(working_folder)
-
-    if table_mode:
-        content = [
-            f'            <a href="./{object_name}-video.gif"><img src="./{object_name}-{file.name_and_extension(filename)}" width="16%"></a>'
-            for filename in sorted(objects.list_of_files(object_name))
-            if file.extension(filename) in "jpg,png,jpeg".split(",")
-        ]
-    else:
-        content = [f'<img src="./{object_name}-DALL-E.png">']
 
     success, html_content = file.load_text(
         os.path.join(
@@ -51,10 +37,26 @@ def create_html(
     if not success:
         return success
 
-    html_content = [line.replace("--title--", object_name) for line in html_content]
+    object_name = path.name(working_folder)
+
+    success, metadata = file.load_json(
+        os.path.join(
+            working_folder,
+            f"{generator}.json",
+        )
+    )
+    if not success:
+        return False
 
     html_content = [
-        line if "--content--" not in line else "\n".join(content)
+        "\n".join([f"        <p>{line_}</p>" for line_ in metadata["content"][1:]])
+        if "--text--" in line
+        else line.replace(
+            "--title--",
+            metadata["content"][0],
+        )
+        .replace("--image--", f"./{object_name}-{generator}.png")
+        .replace("--url--", metadata["source"])
         for line in html_content
     ]
 
