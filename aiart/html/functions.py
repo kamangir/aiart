@@ -57,6 +57,7 @@ def create_html(
         )
         .replace("--image--", f"./{object_name}-{generator}.png")
         .replace("--url--", metadata["source"])
+        .replace("--generator--", metadata["generator"])
         for line in html_content
     ]
 
