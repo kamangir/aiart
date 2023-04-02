@@ -51,13 +51,13 @@ def create_html(
     html_content = [
         "\n".join([f"        <p>{line_}</p>" for line_ in metadata["content"][1:]])
         if "--text--" in line
-        else line.replace(
-            "--title--",
-            metadata["content"][0],
+        else (
+            line.replace("--generator--", metadata["generator"])
+            .replace("--image--", f"./{object_name}-{generator}.png")
+            .replace("--source--", metadata["source"])
+            .replace("--title--", metadata["content"][0])
+            .replace("--url--", f"http://kamangir.net/private/?object={object_name}")
         )
-        .replace("--image--", f"./{object_name}-{generator}.png")
-        .replace("--url--", metadata["source"])
-        .replace("--generator--", metadata["generator"])
         for line in html_content
     ]
 
