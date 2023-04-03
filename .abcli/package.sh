@@ -11,6 +11,8 @@ function aiart_package() {
     local do_publish=$(abcli_option_int "$options" publish 0)
     local generator=$(abcli_option "$options" generator $AIART_DEFAULT_GENERATOR)
 
+    abcli_download
+
     python3 -m aiart.html \
         create \
         --generator $generator \
