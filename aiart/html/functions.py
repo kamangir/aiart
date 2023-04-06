@@ -86,6 +86,8 @@ def ingest_url(url):
 
         if domain == "allpoetry.com":
             title, poem_body = ingest_url_allpoetry(soup)
+        if domain == "medium.com":
+            title, poem_body = ingest_url_medium_com(soup)
         elif domain == "www.poetryfoundation.org":
             title, poem_body = ingest_url_poetryfoundation(soup)
         else:
@@ -120,6 +122,24 @@ def ingest_url_allpoetry(soup):
         .find_all("div")[1]
         .text.strip()
         .split("\n")
+    )
+
+    return title, poem_body
+
+
+def ingest_url_medium_com(soup):
+    title = soup.find("h1", {"class": "pw-post-title"}).text.strip()
+
+    for br in soup.find_all("br"):
+        br.replace_with("\n")
+
+    poem_body = reduce(
+        lambda x, y: x + y,
+        [
+            [line.strip() for line in item.text.split("\n")]
+            for item in soup.find_all("p", {"class": "pw-post-body-paragraph"})
+        ],
+        [],
     )
 
     return title, poem_body
