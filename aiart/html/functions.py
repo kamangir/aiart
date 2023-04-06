@@ -71,9 +71,7 @@ def ingest_url(url):
     """ingest poetry from url.
 
     Args:
-        url (str):
-         - https://allpoetry.com/16-bit-Intel-8088-chip
-         - https://www.poetryfoundation.org/poems/45502/the-red-wheelbarrow
+        url (str): -> README.md for list of supported sources.
 
     Returns:
         bool: success

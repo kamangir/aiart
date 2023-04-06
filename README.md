@@ -1,6 +1,12 @@
-# aiart
+# AiArt
 
-Tools for [Stable Diffusion](https://github.com/kamangir/blue-stability) and [OpenAI](https://github.com/kamangir/openai), an [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin.
+AiArt is an interface to [OpenAI](https://github.com/kamangir/openai), [DALL-E](https://github.com/kamangir/openai/blob/main/.abcli/DALLE.sh), and [Stable Diffusion](https://github.com/kamangir/blue-stability). AiArt can [ingest poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from the following sources:
+
+- https://allpoetry.com/
+- https://www.poetryfoundation.org/
+
+
+[image](./assets/marquee.png)
 
 | [Stable Diffusion](https://github.com/kamangir/blue-stability) | [OpenAI](https://github.com/kamangir/openai) |
 |---|---|
@@ -10,3 +16,5 @@ Tools for [Stable Diffusion](https://github.com/kamangir/blue-stability) and [Op
 | [DALL-E](https://github.com/kamangir/openai/blob/main/.abcli/DALLE.sh) |
 |---|
 | ![image](https://github.com/kamangir/openai/raw/main/assets/DALL-E.png?raw=1) |
+
+an [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin.
