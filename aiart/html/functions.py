@@ -67,11 +67,17 @@ def create_html(
     )
 
 
-def ingest_url(url):
+def ingest_url(
+    url,
+    header=0,
+    footer=0,
+):
     """ingest poetry from url.
 
     Args:
         url (str): -> README.md for list of supported sources.
+        header (int): number of lines to skip at the start.
+        footer (int): number of lines to skip at the end.
 
     Returns:
         bool: success
@@ -96,8 +102,16 @@ def ingest_url(url):
 
         poem_body = [line for line in [line.strip() for line in poem_body] if line]
 
+        if header:
+            poem_body = poem_body[header:]
+        if footer:
+            poem_body = poem_body[:-footer]
+
         logger.info(
-            "{} @ {}: {} line(s):\n{}".format(
+            "{}:{}-{}\n{} @ {}: {} line(s):\n{}".format(
+                url,
+                header,
+                footer,
                 title,
                 domain,
                 len(poem_body),
