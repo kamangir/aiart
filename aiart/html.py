@@ -1,70 +1,13 @@
 from functools import reduce
-import os
-import os.path
 import requests
 from bs4 import BeautifulSoup
 from . import NAME
-from abcli import file
-from abcli import path
-from abcli.modules import objects
 from urllib.parse import urlparse
 from abcli import logging
 from abcli.logging import crash_report
 import logging
 
 logger = logging.getLogger(__name__)
-
-
-def create_html(
-    working_folder,
-    generator,
-    template="overlay",
-):
-    logger.info(
-        "aiart.create_html({}:{}): {}".format(
-            template,
-            generator,
-            working_folder,
-        )
-    )
-
-    success, html_content = file.load_text(
-        os.path.join(
-            os.getenv("abcli_path_git", ""),
-            f"aiart/templates/{template}.html",
-        ),
-    )
-    if not success:
-        return success
-
-    object_name = path.name(working_folder)
-
-    success, metadata = file.load_json(
-        os.path.join(
-            working_folder,
-            f"{generator}.json",
-        )
-    )
-    if not success:
-        return False
-
-    html_content = [
-        "\n".join([f"        <p>{line_}</p>" for line_ in metadata["content"][1:]])
-        if "--text--" in line
-        else (
-            line.replace("--generator--", metadata["generator"])
-            .replace("--image--", f"./{object_name}-{generator}.png")
-            .replace("--source--", metadata["source"])
-            .replace("--title--", metadata["content"][0])
-            .replace("--url--", f"http://kamangir.net/private/?object={object_name}")
-        )
-        for line in html_content
-    ]
-
-    return file.save_text(
-        os.path.join(working_folder, "report.html"),
-        html_content,
-    )
 
 
 def ingest_url(
