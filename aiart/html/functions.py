@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 def create_html(
     working_folder,
     generator,
-    template="double",
+    template="overlay",
 ):
     logger.info(
         "aiart.create_html({}:{}): {}".format(
