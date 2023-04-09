@@ -1,7 +1,7 @@
 function aiart_publish() {
     local task=$(abcli_unpack_keyword $1)
 
-    if [ $task == "help" ] ; then
+    if [ "$task" == "help" ] ; then
         abcli_show_usage "aiart publish$ABCUL[generator=$AIART_GENERATOR_LIST]" \
             "publish $abcli_object_name."
         return
