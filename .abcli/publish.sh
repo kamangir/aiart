@@ -18,8 +18,8 @@ function aiart_publish() {
 
     abcli_log "aiart: publishing $object_name"
 
-    abcli_download
     abcli_upload
+    abcli_download
 
     abcli_publish $abcli_object_name $generator.png
     abcli_publish $abcli_object_name $generator.json
