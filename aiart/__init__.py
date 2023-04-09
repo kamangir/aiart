@@ -1,5 +1,5 @@
 NAME = "aiart"
 
-VERSION = "1.62.1"
+VERSION = "1.63.1"
 
 from .functions import *

@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 function aiart_publish() {
     local task=$(abcli_unpack_keyword $1)
 
@@ -5,7 +7,7 @@ function aiart_publish() {
         abcli_show_usage "aiart publish$ABCUL[generator=$AIART_GENERATOR_LIST]" \
             "publish $abcli_object_name."
         return
-    f
+    fi
 
     local options=$1
     local generator=$AIART_DEFAULT_GENERATOR
@@ -14,7 +16,7 @@ function aiart_publish() {
     fi
     local generator=$(abcli_option "$options" generator $generator)
 
-    abcli_log "aiart: publishing $object_name"
+    abcli_log "aiart: publishing zzz $object_name"
 
     abcli_download
     abcli_upload
