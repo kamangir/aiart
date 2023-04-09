@@ -16,7 +16,7 @@ function aiart_publish() {
     fi
     local generator=$(abcli_option "$options" generator $generator)
 
-    abcli_log "aiart: publishing zzz $object_name"
+    abcli_log "aiart: publishing $object_name"
 
     abcli_download
     abcli_upload
