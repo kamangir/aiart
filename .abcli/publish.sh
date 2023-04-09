@@ -5,7 +5,7 @@ function aiart_publish() {
         abcli_show_usage "aiart publish$ABCUL[generator=$AIART_GENERATOR_LIST]" \
             "publish $abcli_object_name."
         return
-    fi
+    f
 
     local options=$1
     local generator=$AIART_DEFAULT_GENERATOR
@@ -17,6 +17,7 @@ function aiart_publish() {
     abcli_log "aiart: publishing $object_name"
 
     abcli_download
+    abcli_upload
 
     abcli_publish $abcli_object_name $generator.png
     abcli_publish $abcli_object_name $generator.json
