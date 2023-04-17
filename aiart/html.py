@@ -35,7 +35,7 @@ def ingest_url(
 
         if domain == "allpoetry.com":
             title, poem_body = ingest_url_allpoetry(soup)
-        elif domain == "medium.com":
+        elif domain == "medium.com" or domain.endswith(".medium.com"):
             title, poem_body = ingest_url_medium_com(soup)
         elif domain == "www.poetryfoundation.org":
             title, poem_body = ingest_url_poetryfoundation(soup)
