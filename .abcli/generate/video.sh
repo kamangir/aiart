@@ -4,7 +4,7 @@ function aiart_generate_video() {
     local options=$1
     local app_name=$(abcli_option "$options" app aiart)
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ] ; then
+    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
         local args=$(abcli_option "$options" video.args -)
 
         local args=$(echo $args | tr + "-" | tr @ " ")
@@ -27,7 +27,7 @@ function aiart_generate_video() {
 
     abcli_log "$app_name: generate: video: $input_filename -[${@:3}]-> $frame_count frame(s)"
 
-    if [ "$is_url" == 1 ] ; then
+    if [ "$is_url" == 1 ]; then
         local input_filename=$abcli_object_path/script.txt
         curl "$2" --output $input_filename
     fi
@@ -39,14 +39,14 @@ function aiart_generate_video() {
         --slice_by $slice_by \
         --marker "$marker"
 
-    local options=$(abcli_option_default "$options" tag 0)
+    local options=~tag,$options
 
     local i=0
     local sentence
     local filename=""
     local success=true
-    while IFS= read -r sentence ; do
-        if [ -z "$sentence" ] ; then
+    while IFS= read -r sentence; do
+        if [ -z "$sentence" ]; then
             local filename=""
             continue
         fi
@@ -66,29 +66,25 @@ function aiart_generate_video() {
             break
         fi
 
-        ((i=i+1))
-    done < "$input_filename"
-    if [ "$success" == false ] ; then
+        ((i = i + 1))
+    done <"$input_filename"
+    if [ "$success" == false ]; then
         return 1
     fi
 
-    if [ "$dryrun" == 0 ] ; then
+    if [ "$dryrun" == 0 ]; then
         abcli_tag set \
             $abcli_object_name \
             $app_name
     fi
 
-    if [ "$do_render" == 1 ] ; then
-        local options=$(abcli_option_default "$options" fps 5)
-        local options=$(abcli_option_default "$options" rm_frames 0)
-        local options=$(abcli_option_default "$options" resize_to $ABCLI_VIDEO_DEFAULT_SIZE)
-
+    if [ "$do_render" == 1 ]; then
         abcli_create_video \
             .png \
             video \
-            "$options"
+            "fps=5,resize_to=$ABCLI_VIDEO_DEFAULT_SIZE,~rm_frames,$options"
 
-        if [ -f "video.gif" ] ; then
+        if [ -f "video.gif" ]; then
             rm -rv video.gif
         fi
 
@@ -97,11 +93,11 @@ function aiart_generate_video() {
             video.gif
     fi
 
-    if [ "$do_upload" == 1 ] ; then
+    if [ "$do_upload" == 1 ]; then
         abcli_upload
     fi
 
-    if [ "$do_publish" == 1 ] ; then
+    if [ "$do_publish" == 1 ]; then
         abcli_publish \
             $abcli_object_name \
             video.gif

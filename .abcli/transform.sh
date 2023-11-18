@@ -4,7 +4,7 @@ function aiart_transform() {
     local options=$1
     local app_name=$(abcli_option "$options" app aiart)
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ] ; then
+    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
         local args=$(abcli_option "$options" video.args -)
 
         local args=$(echo $args | tr + "-" | tr @ " ")
@@ -36,7 +36,7 @@ function aiart_transform() {
     local list_of_images=""
     local i=0
     local filename
-    for filename in *.$extension ; do
+    for filename in *.$extension; do
         local list_of_images="$list_of_images ${filename%.*}"
 
         python3 -m aiart.image \
@@ -45,10 +45,10 @@ function aiart_transform() {
             --destination $abcli_object_root/$destination_object/raw/${filename%.*}-source.png \
             ${@:4}
 
-        ((i=i+1))
+        ((i = i + 1))
 
-        if [ "$count" != -1 ] ; then
-            if [[ "$i" -ge "$count" ]] ; then
+        if [ "$count" != -1 ]; then
+            if [[ "$i" -ge "$count" ]]; then
                 break
             fi
         fi
@@ -58,23 +58,22 @@ function aiart_transform() {
     abcli_select $destination_object ~trail
 
     local filename
-    local options_=$(abcli_option_default "$options" tag 0)
-    for filename in $list_of_images ; do
+    for filename in $list_of_images; do
         aiart generate image \
-            "$options_" \
+            ~tag,$options \
             $filename \
             $filename-source \
             "$sentence" \
             ${@:4}
     done
 
-    if [ "$do_tag" == 1 ] ; then
+    if [ "$do_tag" == 1 ]; then
         abcli_tag set \
             $destination_object \
             aiart
     fi
 
-    if [ "$do_upload" == 1 ] ; then
+    if [ "$do_upload" == 1 ]; then
         abcli_upload
     fi
 }
