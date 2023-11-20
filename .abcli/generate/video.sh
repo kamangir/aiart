@@ -98,12 +98,7 @@ function aiart_generate_video() {
     fi
 
     if [ "$do_publish" == 1 ]; then
-        abcli_publish \
-            $abcli_object_name \
-            video.gif
-
-        abcli_publish \
-            $abcli_object_name \
-            .png
+        abcli_publish filename=video.gif $abcli_object_name
+        abcli_publish extension=png $abcli_object_name
     fi
 }

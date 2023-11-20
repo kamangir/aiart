@@ -3,7 +3,7 @@
 function aiart_publish() {
     local task=$(abcli_unpack_keyword $1)
 
-    if [ "$task" == "help" ] ; then
+    if [ "$task" == "help" ]; then
         abcli_show_usage "aiart publish$ABCUL[generator=$AIART_GENERATOR_LIST]" \
             "publish $abcli_object_name."
         return
@@ -11,7 +11,7 @@ function aiart_publish() {
 
     local options=$1
     local generator=$AIART_DEFAULT_GENERATOR
-    if [ -f "$abcli_object_path/DALL-E.json" ] ; then
+    if [ -f "$abcli_object_path/DALL-E.json" ]; then
         local generator=DALL-E
     fi
     local generator=$(abcli_option "$options" generator $generator)
@@ -21,8 +21,9 @@ function aiart_publish() {
     abcli_upload
     abcli_download
 
-    abcli_publish $abcli_object_name $generator.png
-    abcli_publish $abcli_object_name $generator.json
+    abcli_publish \
+        filename=$generator.png+$generator.json \
+        $abcli_object_name
 
     abcli_tag set $abcli_object_name \
         published,$generator,aiart
