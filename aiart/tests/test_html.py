@@ -1,5 +1,5 @@
 import pytest
-from aiart.html import ingest_poetry_from_url
+from aiart.html.functions import ingest_poetry_from_url, ingest_url
 
 
 @pytest.mark.parametrize(
@@ -28,3 +28,23 @@ def test_ingest_poetry_from_url(url, expected_title, expected_content_length):
     assert len(content) >= 1
     assert content[0] == expected_title
     assert len(content) == expected_content_length
+
+
+@pytest.mark.parametrize(
+    "url, fake_agent, expected_success",
+    [
+        (
+            "https://earthdaily.com/constellation/",
+            False,
+            False,
+        ),
+        (
+            "https://earthdaily.com/constellation/",
+            True,
+            True,
+        ),
+    ],
+)
+def test_url(url, fake_agent, expected_success):
+    success, _ = ingest_url(url, fake_agent=fake_agent)
+    assert success == expected_success

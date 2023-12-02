@@ -9,8 +9,8 @@ function aiart_generate_image() {
 
         local args=$(echo $args | tr + "-" | tr @ " ")
         local options="app=<app-name>,~dryrun,height=<576>,~sign,~tag,width=<768>"
-        abcli_show_usage "$app_name generate image$ABCUL[$options]$ABCUL[<image>] [<previous-image>]$ABCUL[\"<sentence>\"]$ABCUL[$args]" \
-            "<sentence> -[<previous-image>]-> <image>.png."
+        abcli_show_usage "$app_name generate image$ABCUL[$options]$ABCUL[<image>] [<previous-image>]$ABCUL[\"<prompt>\"]$ABCUL[$args]" \
+            "<prompt> -[<previous-image>]-> <image>.png."
         return
     fi
 

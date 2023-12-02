@@ -10,6 +10,7 @@ function aiart() {
             "urllib.parse.unquote(<message>)."
 
         aiart_generate help app=aiart
+        aiart_html help
         aiart_publish "$@"
         aiart pytest "$@"
         aiart_transform "$@"

@@ -9,8 +9,8 @@ function aiart_transform() {
 
         local args=$(echo $args | tr + "-" | tr @ " ")
         local options="count=<1>,~dryrun,extension=jpg,~sign,~tag,~upload"
-        abcli_show_usage "$app_name transform$ABCUL[$options]$ABCUL[<object-name>]$ABCUL[\"<sentence>\"]$ABCUL[$args]" \
-            "<object-name> -<sentence>-> $abcli_object_name."
+        abcli_show_usage "$app_name transform$ABCUL[$options]$ABCUL[<object-name>]$ABCUL[\"<prompt>\"]$ABCUL[$args]" \
+            "<object-name> -<prompt>-> $abcli_object_name."
         return
     fi
 
