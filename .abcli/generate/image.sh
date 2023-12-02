@@ -22,13 +22,11 @@ function aiart_generate_image() {
 
     local prev_filename=$(abcli_clarify_input $3)
 
-    local sentence=$4
+    local prompt=$4
 
-    if [ -z "$prev_filename" ]; then
-        abcli_log "📘  $i: $sentence"
-    else
-        abcli_log "📖  $i: $sentence"
-    fi
+    [[ -z "$prev_filename" ]] &&
+        abcli_log "📘  $i: $prompt" ||
+        abcli_log "📖  $i: $prompt"
 
     mkdir -p $abcli_object_path/raw
 
@@ -36,33 +34,26 @@ function aiart_generate_image() {
         "$options" \
         "$filename" \
         "$prev_filename" \
-        "$sentence" \
-        ${@:5}
-    if [ $? -ne 0 ]; then
-        return 1
-    fi
+        "$prompt" \
+        "${@:5}"
+    [[ $? -ne 0 ]] && return 1
 
-    if [ "$dryrun" == 1 ]; then
-        return
-    fi
+    [[ "$dryrun" == 1 ]] && return
 
     cp -v \
         $abcli_object_path/raw/$filename.png \
         $abcli_object_path/$filename.png
 
-    if [ "$do_tag" == 1 ]; then
+    [[ "$do_tag" == 1 ]] &&
         abcli_tag set \
             $abcli_object_name \
             $app_name
-    fi
 
-    local footer=""
-    if [ "$do_sign" == 1 ]; then
-        local footer=$sentence
-    fi
+    [[ "$do_sign" == 1 ]] && local footer=$prompt || local footer=""
     python3 -m abcli.modules.host \
         add_signature \
         --application $($app_name version raw) \
         --filename $abcli_object_path/$filename.png \
-        --footer "$footer"
+        --footer "$footer" \
+        --word_wrap 1
 }
