@@ -4,7 +4,7 @@ function aiart_generate_image() {
     local options=$1
     local app_name=$(abcli_option "$options" app openai)
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ] ; then
+    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
         local args=$(abcli_option "$options" image.args -)
 
         local args=$(echo $args | tr + "-" | tr @ " ")
@@ -24,7 +24,7 @@ function aiart_generate_image() {
 
     local sentence=$4
 
-    if [ -z "$prev_filename" ] ; then
+    if [ -z "$prev_filename" ]; then
         abcli_log "📘  $i: $sentence"
     else
         abcli_log "📖  $i: $sentence"
@@ -42,7 +42,7 @@ function aiart_generate_image() {
         return 1
     fi
 
-    if [ "$dryrun" == 1 ] ; then
+    if [ "$dryrun" == 1 ]; then
         return
     fi
 
@@ -50,20 +50,19 @@ function aiart_generate_image() {
         $abcli_object_path/raw/$filename.png \
         $abcli_object_path/$filename.png
 
-
-    if [ "$do_tag" == 1 ] ; then
+    if [ "$do_tag" == 1 ]; then
         abcli_tag set \
             $abcli_object_name \
             $app_name
     fi
 
     local footer=""
-    if [ "$do_sign" == 1 ] ; then
+    if [ "$do_sign" == 1 ]; then
         local footer=$sentence
     fi
     python3 -m abcli.modules.host \
         add_signature \
-        --application $($app_name version) \
+        --application $($app_name version raw) \
         --filename $abcli_object_path/$filename.png \
         --footer "$footer"
 }
