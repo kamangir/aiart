@@ -10,7 +10,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def ingest_url(
+def ingest_poetry_from_url(
     url,
     header=0,
     footer=0,
@@ -40,7 +40,9 @@ def ingest_url(
         elif domain == "www.poetryfoundation.org":
             title, poem_body = ingest_url_poetryfoundation(soup)
         else:
-            logger.error(f"-{NAME}.ingest_url({url}): {domain}: domain not found.")
+            logger.error(
+                f"-{NAME}.ingest_poetry_from_url({url}): {domain}: domain not found."
+            )
             return False, []
 
         poem_body = [line for line in [line.strip() for line in poem_body] if line]
@@ -64,7 +66,7 @@ def ingest_url(
 
         return True, [title] + poem_body
     except:
-        crash_report(f"aiart.html: ingest_url({url})")
+        crash_report(f"aiart.html: ingest_poetry_from_url({url})")
         return False, []
 
 

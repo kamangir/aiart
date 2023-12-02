@@ -1,5 +1,5 @@
 import pytest
-from aiart.html import ingest_url
+from aiart.html import ingest_poetry_from_url
 
 
 @pytest.mark.parametrize(
@@ -22,8 +22,8 @@ from aiart.html import ingest_url
         ),
     ],
 )
-def test_ingest_url(url, expected_title, expected_content_length):
-    success, content = ingest_url(url)
+def test_ingest_poetry_from_url(url, expected_title, expected_content_length):
+    success, content = ingest_poetry_from_url(url)
     assert success
     assert len(content) >= 1
     assert content[0] == expected_title
