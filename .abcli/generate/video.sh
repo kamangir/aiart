@@ -93,9 +93,8 @@ function aiart_generate_video() {
             video.gif
     fi
 
-    if [ "$do_upload" == 1 ]; then
+    [[ "$do_upload" == 1 ]] &&
         abcli_upload
-    fi
 
     if [ "$do_publish" == 1 ]; then
         abcli_publish filename=video.gif $abcli_object_name

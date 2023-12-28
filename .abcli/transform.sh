@@ -67,13 +67,11 @@ function aiart_transform() {
             ${@:4}
     done
 
-    if [ "$do_tag" == 1 ]; then
+    [[ "$do_tag" == 1 ]] &&
         abcli_tag set \
             $destination_object \
             aiart
-    fi
 
-    if [ "$do_upload" == 1 ]; then
+    [[ "$do_upload" == 1 ]] &&
         abcli_upload
-    fi
 }
