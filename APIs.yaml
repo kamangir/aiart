@@ -7,6 +7,8 @@ imagine.art:
     - Image Variate
     - Background Remover
   assessment: Negative: upscale works, image variation doesn't, too expensive.
+  status:
+  supported: false
   urls:
     API Reference: https://platform.imagine.art/api-reference
     Homepage: https://platform.imagine.art/
@@ -14,4 +16,8 @@ imagine.art:
     Playground: https://platform.imagine.art/playground/text-to-image
     Review: https://medium.com/@arash-kamangir/aiart-1-217dcd010f75
 OpenAI:
+  status: documentation pending.
+  supported: true
 Stable-Diffusion:
+  status: documentation pending.
+  supported: true
