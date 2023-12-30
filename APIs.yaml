@@ -1,3 +1,19 @@
+OpenAI:
+  assessment:
+    API: true
+  app_name: openai
+Stable-Diffusion:
+  assessment:
+    API: true
+  app_name: blue_stability
+artflow.ai:
+  urls:
+    Instagram: https://www.instagram.com/artflow_ai/
+    Studio: https://app.artflow.ai/my-creations
+  assessment:
+    API: false
+    overall: false
+  supported: false
 imagine.art:
   abilities:
     - Text to Image
@@ -6,8 +22,10 @@ imagine.art:
     - Image Upscale
     - Image Variate
     - Background Remover
-  assessment: Negative: upscale works, image variation doesn't, too expensive.
-  status:
+  assessment:
+    API: true
+    overall: false
+    description: upscale works, image variation doesn't, too expensive.
   supported: false
   urls:
     API Reference: https://platform.imagine.art/api-reference
@@ -15,9 +33,3 @@ imagine.art:
     Pricing: https://platform.imagine.art/#pricing
     Playground: https://platform.imagine.art/playground/text-to-image
     Review: https://medium.com/@arash-kamangir/aiart-1-217dcd010f75
-OpenAI:
-  status: documentation pending.
-  supported: true
-Stable-Diffusion:
-  status: documentation pending.
-  supported: true
