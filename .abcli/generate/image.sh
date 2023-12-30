@@ -56,7 +56,7 @@ function aiart_generate_image() {
     [[ "$do_sign" == 1 ]] && local footer=$prompt || local footer=""
     python3 -m abcli.modules.host \
         add_signature \
-        --application $($app_name version raw) \
+        --application $($app_name version) \
         --filename $abcli_object_path/$filename.png \
         --footer "$footer" \
         --word_wrap 1
