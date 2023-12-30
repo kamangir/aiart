@@ -1,0 +1,17 @@
+imagine.art:
+  abilities:
+    - Text to Image
+    - ImageRemix
+    - Image Inpaint
+    - Image Upscale
+    - Image Variate
+    - Background Remover
+  assessment: Negative: upscale works, image variation doesn't, too expensive.
+  urls:
+    API Reference: https://platform.imagine.art/api-reference
+    Homepage: https://platform.imagine.art/
+    Pricing: https://platform.imagine.art/#pricing
+    Playground: https://platform.imagine.art/playground/text-to-image
+    Review: https://medium.com/@arash-kamangir/aiart-1-217dcd010f75
+OpenAI:
+Stable-Diffusion:
