@@ -2,7 +2,45 @@
 
 🎨 `aiart` is an interface to [OpenAI](https://github.com/kamangir/openai), [DALL-E](https://github.com/kamangir/openai/blob/main/.abcli/DALLE.sh), and [Stable Diffusion](https://github.com/kamangir/blue-stability). AiArt can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
 
-![image](./assets/marquee.png)
+```bash
+ > aiart help
+abcli_quote <message>
+ . urllib.parse.quote(<message>).
+abcli_unquote <message>
+ . urllib.parse.unquote(<message>).
+aiart generate image \
+	[app=<app-name>,~dryrun,height=<576>,~sign,~tag,width=<768>] \
+	[<image>] [<previous-image>] \
+	["<prompt>"] \
+	[-]
+ . <prompt> -[<previous-image>]-> <image>.png.
+aiart generate video \
+	[app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url] \
+	<filename.txt|url> \
+	[-]
+ . <filename.txt>|url -> video.mp4
+aiart generate validate \
+	[app=<app-name>,dryrun,what=all|image|video]
+ . validate aiart.
+aiart html ingest_url \
+	<url> \
+	[--fake_agent 1] \
+	[--verbose 1]
+ . ingest <url>.
+aiart publish \
+	[generator=blue_stability|DALL-E|openai]
+ . publish 2023-12-27-18-08-30-90155.
+aiart pytest \
+	[~download,dryrun,list,~log,plugin=<plugin-name>,warning] \
+	[filename.py|filename.py::test]
+ . pytest aiart.
+aiart transform \
+	[count=<1>,~dryrun,extension=jpg,~sign,~tag,~upload] \
+	[<object-name>] \
+	["<prompt>"] \
+	[-]
+ . <object-name> -<prompt>-> 2023-12-27-18-08-30-90155.
+```
 
 | [Stable Diffusion](https://github.com/kamangir/blue-stability)                                   | [OpenAI](https://github.com/kamangir/openai)                                             |
 | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
