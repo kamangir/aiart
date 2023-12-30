@@ -11,18 +11,18 @@ abcli_quote <message>
 abcli_unquote <message>
  . urllib.parse.unquote(<message>).
 aiart generate image \
-	[app=<app-name>,~dryrun,height=<576>,~sign,~tag,width=<768>] \
+	[app=blue_stability|openai,~dryrun,height=<576>,~sign,~tag,width=<768>] \
 	[<image>] [<previous-image>] \
 	["<prompt>"] \
 	[-]
  . <prompt> -[<previous-image>]-> <image>.png.
 aiart generate video \
-	[app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url] \
+	[app=blue_stability|openai,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url] \
 	<filename.txt|url> \
 	[-]
  . <filename.txt>|url -> video.mp4
 aiart generate validate \
-	[app=<app-name>,dryrun,what=all|image|video]
+	[app=blue_stability|openai,dryrun,what=all|image|video]
  . validate aiart.
 aiart html ingest_url \
 	<url> \

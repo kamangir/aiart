@@ -2,18 +2,22 @@
 
 function aiart_generate_image() {
     local options=$1
-    local app_name=$(abcli_option "$options" app openai)
+    local app_name=$(abcli_option "$options" app aiart)
 
     if [ $(abcli_option_int "$options" help 0) == 1 ]; then
         local args=$(abcli_option "$options" image.args -)
-
         local args=$(echo $args | tr + "-" | tr @ " ")
-        local options="app=<app-name>,~dryrun,height=<576>,~sign,~tag,width=<768>"
+
+        local app_options=""
+        [[ "$app_name" == aiart ]] && app_options="app=$(echo $aiart_list_of_apps | tr , \|),"
+
+        local options="$app_options~dryrun,height=<576>,~sign,~tag,width=<768>"
         abcli_show_usage "$app_name generate image$ABCUL[$options]$ABCUL[<image>] [<previous-image>]$ABCUL[\"<prompt>\"]$ABCUL[$args]" \
             "<prompt> -[<previous-image>]-> <image>.png."
         return
     fi
 
+    local app_name=$(abcli_option "$options" app openai)
     local dryrun=$(abcli_option_int "$options" dryrun 1)
     local do_sign=$(abcli_option_int "$options" sign $(abcli_not $dryrun))
     local do_tag=$(abcli_option_int "$options" tag $(abcli_not $dryrun))

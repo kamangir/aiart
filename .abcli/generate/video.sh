@@ -6,9 +6,12 @@ function aiart_generate_video() {
 
     if [ $(abcli_option_int "$options" help 0) == 1 ]; then
         local args=$(abcli_option "$options" video.args -)
-
         local args=$(echo $args | tr + "-" | tr @ " ")
-        local options="app=<app-name>,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url"
+
+        local app_options=""
+        [[ "$app_name" == aiart ]] && app_options="app=$(echo $aiart_list_of_apps | tr , \|),"
+
+        local options="$app_options~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url"
         abcli_show_usage "$app_name generate video$ABCUL[$options]$ABCUL<filename.txt|url>$ABCUL[$args]" \
             "<filename.txt>|url -> video.mp4"
         return
