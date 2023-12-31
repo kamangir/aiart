@@ -14,6 +14,18 @@ artflow.ai:
     API: false
     overall: false
   supported: false
+artiphoria.ai:
+  urls:
+    Homepage: https://www.artiphoria.ai/
+  assessment:
+    API: false
+    overall: false
+  supported: false
+leonardo.ai:
+  urls:
+    Homepage: https://leonardo.ai/
+    Review: https://davidwlitwin.medium.com/sorry-midjourney-but-image-guidance-by-leonardo-ai-has-no-equal-yet-5d98445195d7
+  status: 🔥
 imagine.art:
   abilities:
     - Text to Image
@@ -25,7 +37,7 @@ imagine.art:
   assessment:
     API: true
     overall: false
-    description: upscale works, image variation doesn't, too expensive.
+    description: upscale works, image variation does not, too expensive.
   supported: false
   urls:
     API Reference: https://platform.imagine.art/api-reference
