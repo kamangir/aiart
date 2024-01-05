@@ -2,7 +2,7 @@ import emoji
 from functools import reduce
 import re
 from abcli import file
-from Kanata.metadata import update_metadata
+from abcli.plugins.metadata import update_metadata
 from . import NAME
 from abcli import logging
 import logging

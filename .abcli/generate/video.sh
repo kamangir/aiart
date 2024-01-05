@@ -83,9 +83,7 @@ function aiart_generate_video() {
 
     if [ "$do_render" == 1 ]; then
         abcli_create_video \
-            .png \
-            video \
-            "fps=5,resize_to=$ABCLI_VIDEO_DEFAULT_SIZE,~rm_frames,$options"
+            png,filename=video,fps=5,resize_to=$ABCLI_VIDEO_DEFAULT_SIZE,$options
 
         if [ -f "video.gif" ]; then
             rm -rv video.gif
