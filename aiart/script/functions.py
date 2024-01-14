@@ -2,7 +2,7 @@ import emoji
 from functools import reduce
 import re
 from abcli import file
-from abcli.plugins.metadata import update as update_metadata, MetadataSourceType
+from abcli.plugins.metadata import post as post_metadata, MetadataSourceType
 from . import NAME
 from abcli import logging
 import logging
@@ -111,7 +111,7 @@ def flatten(
     ):
         return False
 
-    if not update_metadata(
+    if not post_metadata(
         "script",
         {
             "frame_count": frame_count,
@@ -119,7 +119,7 @@ def flatten(
             "script": script,
         },
         source=file.path(filename),
-        source_type=MetadataSourceType.OBJECT_PATH,
+        source_type=MetadataSourceType.PATH,
     ):
         return False
 
