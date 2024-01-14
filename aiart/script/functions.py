@@ -2,7 +2,7 @@ import emoji
 from functools import reduce
 import re
 from abcli import file
-from abcli.plugins.metadata import update_metadata
+from abcli.plugins.metadata import update as update_metadata, MetadataSourceType
 from . import NAME
 from abcli import logging
 import logging
@@ -118,7 +118,8 @@ def flatten(
             "marker": marker,
             "script": script,
         },
-        object_path=file.path(filename),
+        source=file.path(filename),
+        source_type=MetadataSourceType.OBJECT_PATH,
     ):
         return False
 
