@@ -53,7 +53,10 @@ function aiart_transform() {
             fi
         fi
     done
-    abcli_log_list "$list_of_images" space "images(s)" "transforming "
+    abcli_log_list "$list_of_images" \
+        --before "transforming" \
+        --delim space \
+        --after "images(s)"
 
     abcli_select $destination_object ~trail
 
