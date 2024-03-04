@@ -1,11 +1,8 @@
 import argparse
 import cv2
-from . import *
 from abcli import file
-from abcli import logging
-import logging
-
-logger = logging.getLogger(__name__)
+from aiart.image import NAME
+from aiart.logger import logger
 
 
 parser = argparse.ArgumentParser(NAME)

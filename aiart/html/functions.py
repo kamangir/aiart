@@ -2,31 +2,20 @@ from functools import reduce
 from typing import List, Tuple
 import requests
 from bs4 import BeautifulSoup
-from . import NAME
 from urllib.parse import urlparse
-from abcli import logging
-from abcli.logging import crash_report
-import logging
-
-logger = logging.getLogger(__name__)
+from abcli.logger import crash_report
+from aiart.html import NAME
+from aiart.logger import logger
 
 
 def ingest_poetry_from_url(
-    url,
-    header=0,
-    footer=0,
-):
-    """ingest poetry from url.
-
-    Args:
-        url (str): -> README.md for list of supported sources.
-        header (int): number of lines to skip at the start.
-        footer (int): number of lines to skip at the end.
-
-    Returns:
-        bool: success
-        List[str]: content
-    """
+    # -> README.md for list of supported sources.
+    url: str,
+    # number of lines to skip at the start.
+    header: int = 0,
+    # number of lines to skip at the end.
+    footer: int = 0,
+) -> Tuple[bool, List[str]]:
     domain = urlparse(url).netloc
 
     try:

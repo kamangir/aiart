@@ -1,9 +1,7 @@
 import argparse
-from . import *
-from abcli import logging
-import logging
+from aiart import NAME, VERSION
+from aiart.logger import logger
 
-logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
 parser.add_argument(

@@ -2,10 +2,8 @@ import argparse
 from aiart import VERSION
 from aiart.html import NAME
 from aiart.html.functions import ingest_url
-from abcli import logging
-import logging
+from aiart.logger import logger
 
-logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
 parser.add_argument(

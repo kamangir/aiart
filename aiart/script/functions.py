@@ -3,11 +3,8 @@ from functools import reduce
 import re
 from abcli import file
 from abcli.plugins.metadata import post as post_metadata, MetadataSourceType
-from . import NAME
-from abcli import logging
-import logging
-
-logger = logging.getLogger(__name__)
+from aiart.script import NAME
+from aiart.logger import logger
 
 
 def flatten(

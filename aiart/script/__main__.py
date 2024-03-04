@@ -1,10 +1,7 @@
 import argparse
-from . import *
-from abcli import file
-from abcli import logging
-import logging
-
-logger = logging.getLogger(__name__)
+from aiart.script import NAME
+from aiart.script.functions import flatten
+from aiart.logger import logger
 
 
 parser = argparse.ArgumentParser(NAME)

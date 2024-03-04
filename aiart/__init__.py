@@ -1,5 +1,7 @@
 NAME = "aiart"
 
-VERSION = "1.97.1"
+ICON = "🎨"
 
-from .functions import *
+DESCRIPTION = f"{ICON} tools for aiart."
+
+VERSION = "1.99.1"
