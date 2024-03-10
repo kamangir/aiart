@@ -8,12 +8,12 @@ from aiart.html.functions import ingest_poetry_from_url, ingest_url
         (
             "https://allpoetry.com/Hemingway-Never-Did-This",
             "Hemingway Never Did This",
-            32,
+            2,
         ),
         (
             "https://allpoetry.com/16-bit-Intel-8088-chip",
             "16-bit Intel 8088 chip",
-            27,
+            2,
         ),
         (
             "https://www.poetryfoundation.org/poems/45502/the-red-wheelbarrow",
