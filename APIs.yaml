@@ -1,7 +1,7 @@
 OpenAI:
   assessment:
     API: true
-  app_name: openai
+  app_name: openai_cli
 Stable-Diffusion:
   assessment:
     API: true
