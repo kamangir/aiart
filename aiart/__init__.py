@@ -4,4 +4,4 @@ ICON = "🎨"
 
 DESCRIPTION = f"{ICON} tools for aiart."
 
-VERSION = "1.103.1"
+VERSION = "1.104.1"
