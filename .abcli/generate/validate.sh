@@ -44,4 +44,5 @@ function aiart_generate_validate() {
     fi
 
     abcli_log_error "-$app_name: generate: validate: $what: command not found."
+    return 1
 }

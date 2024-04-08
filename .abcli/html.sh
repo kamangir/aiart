@@ -25,4 +25,5 @@ function aiart_html() {
     fi
 
     abcli_log_error "-abcli: html: $task: command not found."
+    return 1
 }

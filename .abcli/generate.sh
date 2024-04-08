@@ -23,6 +23,7 @@ function aiart_generate() {
     fi
 
     abcli_log_error "-aiart: generate: $task: command not found."
+    return 1
 }
 
 abcli_source_path \

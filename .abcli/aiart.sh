@@ -52,6 +52,7 @@ function aiart() {
     fi
 
     abcli_log_error "-aiart: $task: command not found."
+    return 1
 }
 
 abcli_source_path \
