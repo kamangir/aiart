@@ -22,7 +22,7 @@ function aiart_publish() {
     abcli_download
 
     abcli_publish \
-        filename=$generator.png+$generator.json \
+        prefix=$generator \
         $abcli_object_name
 
     abcli_tag set $abcli_object_name \
