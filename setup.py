@@ -3,7 +3,7 @@ from blueness.pypi import setup
 
 setup(
     filename=__file__,
-    repo_name="blue-plugin",
+    repo_name="aiart",
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
