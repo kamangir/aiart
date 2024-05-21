@@ -15,16 +15,7 @@ function aiart() {
         aiart_html help
         aiart_publish "$@"
 
-        local task
-        for task in pylint pytest test; do
-            aiart $task "$@"
-        done
-
         aiart_transform "$@"
-
-        if [ "$(abcli_keyword_is $2 verbose)" == true ]; then
-            python3 -m aiart --help
-        fi
 
         return
     fi
@@ -43,6 +34,13 @@ function aiart() {
     if [[ "|pylint|pytest|test|" == *"|$task|"* ]]; then
         abcli_${task} plugin=aiart,$2 \
             "${@:3}"
+        return
+    fi
+
+    if [[ "|pypi|" == *"|$task|"* ]]; then
+        abcli_${task} "$2" \
+            plugin=aiart,$3 \
+            "${@:4}"
         return
     fi
 
