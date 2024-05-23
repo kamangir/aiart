@@ -1,4 +1,4 @@
-# 🎨 `aiart`
+# 🎨 `aiart` (`articraft`)
 
 🎨 `aiart` is an interface to [OpenAI](https://github.com/kamangir/openai_cli), [DALL-E](https://github.com/kamangir/openai_cli/blob/main/.abcli/DALLE.sh), and [Stable Diffusion](https://github.com/kamangir/blue-stability). AiArt can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
 
