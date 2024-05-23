@@ -1,7 +1,7 @@
 import argparse
-from aiart.script import NAME
-from aiart.script.functions import flatten
-from aiart.logger import logger
+from articraft.script import NAME
+from articraft.script.functions import flatten
+from articraft.logger import logger
 
 
 parser = argparse.ArgumentParser(NAME)

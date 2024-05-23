@@ -2,6 +2,10 @@
 
 export aiart_list_of_apps="blue_stability,openai_cli"
 
+function articraft() {
+    aiart "$@"
+}
+
 function aiart() {
     local task=$(abcli_unpack_keyword $1 help)
 

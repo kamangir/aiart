@@ -3,8 +3,8 @@ from functools import reduce
 import re
 from abcli import file
 from abcli.plugins.metadata import post as post_metadata, MetadataSourceType
-from aiart.script import NAME
-from aiart.logger import logger
+from articraft.script import NAME
+from articraft.logger import logger
 
 
 def flatten(

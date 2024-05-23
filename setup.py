@@ -1,4 +1,4 @@
-from aiart import NAME, VERSION, DESCRIPTION
+from articraft import NAME, VERSION, DESCRIPTION
 from blueness.pypi import setup
 
 setup(

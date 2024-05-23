@@ -1,4 +1,4 @@
-from aiart import VERSION
+from articraft import VERSION
 
 
 def test_version():

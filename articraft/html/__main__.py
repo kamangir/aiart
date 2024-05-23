@@ -1,8 +1,8 @@
 import argparse
-from aiart import VERSION
-from aiart.html import NAME
-from aiart.html.functions import ingest_url
-from aiart.logger import logger
+from articraft import VERSION
+from articraft.html import NAME
+from articraft.html.functions import ingest_url
+from articraft.logger import logger
 
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")

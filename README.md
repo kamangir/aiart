@@ -5,7 +5,38 @@
 🔷 [APIs](./APIs.yaml) 🔷
 
 ```bash
-...
+abcli_quote <message>
+ . urllib.parse.quote(<message>).
+abcli_unquote <message>
+ . urllib.parse.unquote(<message>).
+aiart generate image \
+	[app=blue_stability|openai_cli,~dryrun,height=<576>,~sign,~tag,width=<768>] \
+	[<image>] [<previous-image>] \
+	["<prompt>"] \
+	[-]
+ . <prompt> -[<previous-image>]-> <image>.png.
+aiart generate video \
+	[app=blue_stability|openai_cli,~dryrun,frame_count=16,marker=PART,~publish,~render,resize_to=1280x1024,~sign,slice_by=words|sentences,~upload,url] \
+	<filename.txt|url> \
+	[-]
+ . <filename.txt>|url -> video.mp4
+aiart generate validate \
+	[app=blue_stability|openai_cli,dryrun,what=all|image|video]
+ . validate aiart.
+aiart html ingest_url \
+	<url> \
+	[--fake_agent 1] \
+	[--verbose 1]
+ . ingest <url>.
+aiart publish \
+	[generator=blue_stability|DALL-E|openai_cli]
+ . publish 2024-05-22-07-37-34-67918.
+aiart transform \
+	[count=<1>,~dryrun,extension=jpg,~sign,~tag,~upload] \
+	[<object-name>] \
+	["<prompt>"] \
+	[-]
+ . <object-name> -<prompt>-> 2024-05-22-07-37-34-67918.
 ```
 
 | [Stable Diffusion](https://github.com/kamangir/blue-stability)                                   | [OpenAI](https://github.com/kamangir/openai_cli)                                             |

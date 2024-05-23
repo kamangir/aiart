@@ -4,8 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from abcli.logger import crash_report
-from aiart.html import NAME
-from aiart.logger import logger
+from articraft.html import NAME
+from articraft.logger import logger
 
 
 def ingest_poetry_from_url(
@@ -56,7 +56,7 @@ def ingest_poetry_from_url(
 
         return True, [title] + poem_body
     except:
-        crash_report(f"aiart.html: ingest_poetry_from_url({url})")
+        crash_report(f"{NAME}: ingest_poetry_from_url({url})")
         return False, []
 
 

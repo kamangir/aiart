@@ -1,5 +1,5 @@
 import pytest
-from aiart.html.functions import ingest_poetry_from_url, ingest_url
+from articraft.html.functions import ingest_poetry_from_url, ingest_url
 
 
 @pytest.mark.parametrize(

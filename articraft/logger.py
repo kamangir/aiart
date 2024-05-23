@@ -1,4 +1,4 @@
 from abcli.logger import get_logger
-from aiart import ICON
+from articraft import ICON
 
 logger = get_logger(ICON)
