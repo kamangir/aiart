@@ -1,4 +1,3 @@
-import argparse
 from articraft import NAME, VERSION, DESCRIPTION, ICON
 from articraft.logger import logger
 from blueness.argparse.version import main
