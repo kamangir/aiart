@@ -17,7 +17,7 @@ function aiart_generate_image() {
         return
     fi
 
-    local app_name=$(abcli_option "$options" app openai_cli)
+    local app_name=$(abcli_option "$options" app openai_commands)
     local dryrun=$(abcli_option_int "$options" dryrun 1)
     local do_sign=$(abcli_option_int "$options" sign $(abcli_not $dryrun))
     local do_tag=$(abcli_option_int "$options" tag $(abcli_not $dryrun))

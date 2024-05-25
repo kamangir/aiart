@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-export AIART_GENERATOR_LIST="blue_stability|DALL-E|openai_cli"
+export AIART_GENERATOR_LIST="blue_stability|DALL-E|openai_commands"
 export AIART_DEFAULT_GENERATOR="DALL-E"
 
 function aiart_generate() {
