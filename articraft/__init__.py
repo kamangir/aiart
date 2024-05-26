@@ -4,4 +4,4 @@ ICON = "🎨"
 
 DESCRIPTION = f"{ICON} tools for ai artists."
 
-VERSION = "2.15.1"
+VERSION = "2.16.1"
