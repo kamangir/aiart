@@ -26,5 +26,4 @@ function aiart_generate() {
     return 1
 }
 
-abcli_source_path \
-    $abcli_path_git/aiart/.abcli/generate
+abcli_source_path - caller,suffix=/generate

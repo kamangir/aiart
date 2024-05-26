@@ -39,7 +39,7 @@ function aiart_transform() {
     for filename in *.$extension; do
         local list_of_images="$list_of_images ${filename%.*}"
 
-        python3 -m aiart.image \
+        python3 -m articraft.image \
             convert \
             --source $abcli_object_path/$filename \
             --destination $abcli_object_root/$destination_object/raw/${filename%.*}-source.png \

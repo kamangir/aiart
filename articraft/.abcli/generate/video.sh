@@ -35,7 +35,7 @@ function aiart_generate_video() {
         curl "$2" --output $input_filename
     fi
 
-    python3 -m aiart.script \
+    python3 -m articraft.script \
         flatten \
         --filename $input_filename \
         --frame_count $frame_count \
