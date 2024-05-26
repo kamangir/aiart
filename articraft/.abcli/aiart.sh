@@ -22,3 +22,5 @@ function aiart() {
         plugin=aiart,task=$task \
         "${@:2}"
 }
+
+abcli_log $(aiart version --show_icon 1)
