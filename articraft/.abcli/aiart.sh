@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-export aiart_list_of_apps="blue_stability,openai_commands"
-
 function aiart() {
     local task=$(abcli_unpack_keyword $1 help)
 

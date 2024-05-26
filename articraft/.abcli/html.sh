@@ -17,7 +17,7 @@ function aiart_html() {
             return
         fi
 
-        python3 -m aiart.html \
+        python3 -m articraft.html \
             ingest_url \
             --url "$url" \
             "${@:3}"
