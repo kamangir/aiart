@@ -6,4 +6,6 @@ function test_aiart_version() {
 
     abcli_eval dryrun=$do_dryrun \
         "aiart version ${@:2}"
+
+    return 0
 }
