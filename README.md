@@ -1,10 +1,15 @@
-# aiart (articraft)
+# 🎨 aiart (`articraft`)
 
-🎨 `aiart` is an interface to [OpenAI commands](https://github.com/kamangir/openai-commands), [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh), and [Stable Diffusion](https://github.com/kamangir/blue-stability). AiArt can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
+🎨 `aiart` is an interface to [OpenAI commands](https://github.com/kamangir/openai-commands), [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh), and [stable diffusion](https://github.com/kamangir/blue-stability). AiArt can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
+
+```bash
+pip install articraft
+```
 
 🔷 [APIs](./APIs.yaml) 🔷
 
 ```bash
+ > @openai help
 abcli_quote <message>
  . urllib.parse.quote(<message>).
 abcli_unquote <message>
@@ -39,7 +44,7 @@ aiart transform \
  . <object-name> -<prompt>-> 2024-05-22-07-37-34-67918.
 ```
 
-| [Stable Diffusion](https://github.com/kamangir/blue-stability)                                   | [OpenAI commands](https://github.com/kamangir/openai-commands)                                    |
+| [stable diffusion](https://github.com/kamangir/blue-stability)                                   | [OpenAI commands](https://github.com/kamangir/openai-commands)                                    |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
 | ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/carrot.png?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/openai-commands/main/assets/carrot.png?raw=1) |
 | ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/minds.gif?raw=1)  | ![image](https://raw.githubusercontent.com/kamangir/openai-commands/main/assets/minds.gif?raw=1)  |
@@ -48,4 +53,8 @@ aiart transform \
 | -------------------------------------------------------------------------------------- |
 | ![image](https://github.com/kamangir/openai-commands/raw/main/assets/DALL-E.png?raw=1) |
 
-an [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin.
+---
+
+[![PyPI version](https://img.shields.io/pypi/v/articraft.svg)](https://pypi.org/project/articraft/)
+
+an 🚀 [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin.
