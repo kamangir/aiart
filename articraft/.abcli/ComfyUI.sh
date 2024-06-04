@@ -23,5 +23,6 @@ function ComfyUI() {
     conda activate ComfyUI
     [[ $? -ne 0 ]] && return 1
 
-    abcli_log "🪄"
+    abcli_eval path=$abcli_path_git/ComfyUI \
+        python3 main.py
 }
