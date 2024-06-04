@@ -15,6 +15,8 @@ function aiart() {
 
         aiart_transform "$@"
 
+        ComfyUI "$@"
+
         return
     fi
 
