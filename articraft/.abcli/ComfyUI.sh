@@ -13,8 +13,10 @@ function ComfyUI() {
     local do_install=$(abcli_option_int "$options" install 0)
     if [ $do_install == 1 ]; then
         abcli_git_clone https://github.com/comfyanonymous/ComfyUI
+
         abcli_conda_create \
             ~install_plugin,name=ComfyUI,~recreate
+
         pushd $abcli_path_git/ComfyUI >/dev/null
         pip3 install -r requirements.txt
         popd >/dev/null
