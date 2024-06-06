@@ -1,6 +1,6 @@
 # 🎨 aiart (`articraft`)
 
-🎨 `aiart` is an interface to [OpenAI commands](https://github.com/kamangir/openai-commands), [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh), [stable diffusion](https://github.com/kamangir/blue-stability), and [ComfyUI](https://github.com/comfyanonymous/ComfyUI). `aiart` can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
+🎨 `aiart` provides command interfaces to [OpenAI](https://github.com/kamangir/openai-commands), [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh), [Stable Diffusion](https://github.com/kamangir/blue-stability), and [ComfyUI](https://github.com/comfyanonymous/ComfyUI). `aiart` can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
 
 ```bash
 pip install articraft
@@ -25,6 +25,8 @@ comfy tunnel
 you will see a url that looks like `<TBA>`, click on it. ComfyUI should open.
 
 [ComfyUI](./articraft/.abcli/ComfyUI.sh) if based on [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
+
+---
 
 ## aiart
 
