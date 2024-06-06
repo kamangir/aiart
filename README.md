@@ -52,13 +52,7 @@ aiart transform \
 
 ## ComfyUI
 
-To start `ComfyUI`, type in,
-
-```bash
-@sagemaker browse
-```
-
-🔥
+start [ComfyUI](./articraft/.abcli/ComfyUI.sh) [on SageMaker](https://github.com/kamangir/blue-plugin/blob/main/SageMaker.md) then follow [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
 
 ---
 
