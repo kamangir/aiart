@@ -29,14 +29,14 @@ comfy start install
 
 ```bash
 # terminal 2
-comfy tunnel init
+comfy tunnel
 ```
 
 ![image](https://github.com/kamangir/assets/blob/main/aiart/ComfyUI/tunnel.png?raw=true)
 
 you will see a url that ends with `ngrok-free.app`, click on it. ComfyUI should open.
 
-🚀
+![image](https://github.com/kamangir/assets/blob/main/aiart/ComfyUI/ui.png?raw=true)
 
 [ComfyUI](./articraft/.abcli/ComfyUI.sh) is based on [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
 
