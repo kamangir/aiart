@@ -9,6 +9,11 @@ function ComfyUI_install() {
         return
     fi
 
+    if [[ "$abcli_is_sagemaker_system" == true ]]; then
+        abcli_log_warning "image terminal command."
+        return 1
+    fi
+
     abcli_git_clone https://github.com/comfyanonymous/ComfyUI
 
     abcli_conda_create \

@@ -10,6 +10,11 @@ function ComfyUI_tunnel() {
         return
     fi
 
+    if [[ "$abcli_is_sagemaker_system" == true ]]; then
+        abcli_log_warning "image terminal command."
+        return 1
+    fi
+
     conda activate ComfyUI
     [[ $? -ne 0 ]] && return 1
 
