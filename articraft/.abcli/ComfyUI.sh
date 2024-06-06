@@ -1,30 +1,25 @@
 #! /usr/bin/env bash
 
+# https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e
 function ComfyUI() {
-    local options=$1
+    local task=$1
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
-        options="install,start"
-        abcli_show_usage "ComfyUI $options" \
-            "start ComfyUI."
+    if [[ "$task" == "help" ]]; then
+        ComfyUI_install "$@"
+        ComfyUI_start "$@"
+        ComfyUI_tunnel "$@"
+        ComfyUI_uninstall "$@"
         return
     fi
 
-    local do_install=$(abcli_option_int "$options" install 0)
-    if [ $do_install == 1 ]; then
-        abcli_git_clone https://github.com/comfyanonymous/ComfyUI
-
-        abcli_conda_create \
-            ~install_plugin,name=ComfyUI,~recreate
-
-        pushd $abcli_path_git/ComfyUI >/dev/null
-        pip3 install -r requirements.txt
-        popd >/dev/null
+    local function_name=ComfyUI_$task
+    if [[ $(type -t $function_name) == "function" ]]; then
+        $function_name "${@:2}"
+        return
     fi
 
-    conda activate ComfyUI
-    [[ $? -ne 0 ]] && return 1
+    python3 -m articraft.ComfyUI "$@"
 
-    abcli_eval path=$abcli_path_git/ComfyUI \
-        python3 main.py
 }
+
+abcli_source_path - caller,suffix=/ComfyUI

@@ -10,6 +10,8 @@ opencv-python
 pymysql==0.10.1
 pyyaml
 pylint
+# https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e
+pyngrok
 pytest
 python-dotenv[cli]
 requests
