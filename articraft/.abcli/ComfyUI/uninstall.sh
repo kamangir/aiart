@@ -3,7 +3,7 @@
 function ComfyUI_uninstall() {
     local task=$1
 
-    if [ $(abcli_option_int "$options" help 0) == 1 ]; then
+    if [[ "$task" == "help" ]]; then
         abcli_show_usage "ComfyUI uninstall" \
             "uninstall ComfyUI."
         return
