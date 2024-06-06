@@ -25,7 +25,7 @@ then type these commands in them,
 comfy install,start
 
 # terminal 2
-comfy init; comfy tunnel
+comfy tunnel init
 ```
 
 you will see a url that looks like `<TBA>`, click on it. ComfyUI should open.
