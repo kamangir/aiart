@@ -24,7 +24,7 @@ comfy tunnel
 
 you will see a url that looks like `<TBA>`, click on it. ComfyUI should open.
 
-[ComfyUI](./articraft/.abcli/ComfyUI.sh) if based on [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
+[ComfyUI](./articraft/.abcli/ComfyUI.sh) is based on [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
 
 ---
 
