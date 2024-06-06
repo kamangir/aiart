@@ -18,7 +18,7 @@ open two image terminals on an instance such as `ml.g4dn.xlarge` in [SageMaker](
 # terminal 1
 comfy start
 
-#terminal 2
+# terminal 2
 comfy tunnel
 ```
 
