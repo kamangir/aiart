@@ -12,7 +12,19 @@ pip install articraft
 
 ## ComfyUI
 
-start [ComfyUI](./articraft/.abcli/ComfyUI.sh) [on SageMaker](https://github.com/kamangir/blue-plugin/blob/main/SageMaker.md) then follow [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
+open two image terminals on an instance such as `ml.g4dn.xlarge` in [SageMaker](https://github.com/kamangir/blue-plugin/blob/main/SageMaker.md). then type these commands in them,
+
+```bash
+# terminal 1
+comfy start
+
+#terminal 2
+comfy tunnel
+```
+
+you will see a url that looks like `<TBA>`, click on it. ComfyUI should open.
+
+[ComfyUI](./articraft/.abcli/ComfyUI.sh) if based on [these instructions](https://medium.com/@dminhk/3-easy-steps-to-run-comfyui-on-amazon-sagemaker-notebook-c9bdb226c15e).
 
 ## aiart
 
