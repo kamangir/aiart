@@ -1,12 +1,12 @@
 # 🎨 aiart (`articraft`)
 
-🎨 `aiart` is an interface to [OpenAI commands](https://github.com/kamangir/openai-commands), [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh), and [stable diffusion](https://github.com/kamangir/blue-stability). AiArt can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
+🎨 `aiart` is an interface to [OpenAI commands](https://github.com/kamangir/openai-commands), [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh), [stable diffusion](https://github.com/kamangir/blue-stability), and [ComfyUI](https://github.com/comfyanonymous/ComfyUI). `aiart` can ingest [text and poetry](https://github.com/kamangir/aiart/blob/main/aiart/html/functions.py) from [allpoetry.com](https://allpoetry.com/), [medium](https://medium.com/), and [poetryfoundation.org](https://www.poetryfoundation.org/).
 
 ```bash
 pip install articraft
 ```
 
-🔷 [APIs](./APIs.yaml) 🔷
+🔷 [APIs](./APIs.yaml) 🔷 [ComfyUI](#ComfyUI)
 
 ```bash
  > @openai help
@@ -44,14 +44,21 @@ aiart transform \
  . <object-name> -<prompt>-> 2024-05-22-07-37-34-67918.
 ```
 
-| [stable diffusion](https://github.com/kamangir/blue-stability)                                   | [OpenAI commands](https://github.com/kamangir/openai-commands)                                    |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
-| ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/carrot.png?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/openai-commands/main/assets/carrot.png?raw=1) |
-| ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/minds.gif?raw=1)  | ![image](https://raw.githubusercontent.com/kamangir/openai-commands/main/assets/minds.gif?raw=1)  |
+| [stable diffusion](https://github.com/kamangir/blue-stability)                                   |                                                                                                 | [OpenAI commands](https://github.com/kamangir/openai-commands)                                    |                                                                                                  | [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh)        |
+| ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/carrot.png?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/blue-stability/main/assets/minds.gif?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/openai-commands/main/assets/carrot.png?raw=1) | ![image](https://raw.githubusercontent.com/kamangir/openai-commands/main/assets/minds.gif?raw=1) | ![image](https://github.com/kamangir/openai-commands/raw/main/assets/DALL-E.png?raw=1) |
 
-| [DALL-E](https://github.com/kamangir/openai-commands/blob/main/.abcli/DALLE.sh)        |
-| -------------------------------------------------------------------------------------- |
-| ![image](https://github.com/kamangir/openai-commands/raw/main/assets/DALL-E.png?raw=1) |
+---
+
+## ComfyUI
+
+To start `ComfyUI`, type in,
+
+```bash
+@sagemaker browse
+```
+
+🔥
 
 ---
 
