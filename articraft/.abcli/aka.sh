@@ -3,3 +3,7 @@
 function articraft() {
     aiart "$@"
 }
+
+function comfy() {
+    ComfyUI "$@"
+}
