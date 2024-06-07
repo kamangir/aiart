@@ -15,21 +15,15 @@ pip install articraft
 open an image terminals on an instance such as `ml.g4dn.xlarge` in [SageMaker](https://github.com/kamangir/blue-plugin/blob/main/SageMaker.md), and 🌱 [seed](https://github.com/kamangir/awesome-bash-cli/blob/current/abcli/.abcli/plugins/seed.sh) them,
 
 ```bash
-@seed sagemaker
-```
-
-then type these commands in them,
-
-```bash
 # terminal 1
-comfy start install
+@seed sagemaker eval - comfy start install
 ```
 
 ![image](https://github.com/kamangir/assets/blob/main/aiart/ComfyUI/start.png?raw=true)
 
 ```bash
 # terminal 2
-comfy tunnel
+@seed sagemaker eval - comfy tunnel
 ```
 
 ![image](https://github.com/kamangir/assets/blob/main/aiart/ComfyUI/tunnel.png?raw=true)
