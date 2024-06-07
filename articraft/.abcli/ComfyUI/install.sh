@@ -16,6 +16,8 @@ function ComfyUI_install() {
 
     abcli_git_clone https://github.com/comfyanonymous/ComfyUI
 
+    abcli_git_clone https://github.com/comfyanonymous/ComfyUI_examples
+
     abcli_conda_create \
         ~install_plugin,name=ComfyUI,~recreate
 
