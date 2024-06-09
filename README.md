@@ -12,7 +12,7 @@ pip install articraft
 
 ## ComfyUI
 
-open an image terminals on an instance such as `ml.g4dn.xlarge` in [SageMaker](https://github.com/kamangir/blue-plugin/blob/main/SageMaker.md), and 🌱 [seed](https://github.com/kamangir/awesome-bash-cli/blob/current/abcli/.abcli/plugins/seed.sh) them,
+open two image terminals on an instance such as `ml.g4dn.xlarge` in [SageMaker](https://github.com/kamangir/blue-plugin/blob/main/SageMaker.md), and 🌱 [seed](https://github.com/kamangir/awesome-bash-cli/blob/current/abcli/.abcli/plugins/seed.sh) them,
 
 ```bash
 # terminal 1
