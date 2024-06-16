@@ -3,6 +3,7 @@ import cv2
 from abcli import file
 from articraft.image import NAME
 from articraft.logger import logger
+from blueness.argparse.generic import sys_exit
 
 
 parser = argparse.ArgumentParser(NAME)
