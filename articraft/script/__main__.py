@@ -2,7 +2,7 @@ import argparse
 from articraft.script import NAME
 from articraft.script.functions import flatten
 from articraft.logger import logger
-from blueness.argparse.generic import ending
+from blueness.argparse.generic import sys_exit
 
 
 parser = argparse.ArgumentParser(NAME)
@@ -43,4 +43,4 @@ if args.task == "flatten":
 else:
     success = None
 
-ending(logger, NAME, args.task, success)
+sys_exit(logger, NAME, args.task, success)

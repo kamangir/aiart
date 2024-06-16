@@ -3,7 +3,7 @@ from articraft import VERSION
 from articraft.html import NAME
 from articraft.html.functions import ingest_url
 from articraft.logger import logger
-from blueness.argparse.generic import ending
+from blueness.argparse.generic import sys_exit
 
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
@@ -41,4 +41,4 @@ if args.task == "ingest_url":
 else:
     success = None
 
-ending(logger, NAME, args.task, success)
+sys_exit(logger, NAME, args.task, success)

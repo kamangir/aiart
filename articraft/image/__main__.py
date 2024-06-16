@@ -70,4 +70,4 @@ elif args.task == "convert_to_RGBA":
 else:
     success = None
 
-ending(logger, NAME, args.task, success)
+sys_exit(logger, NAME, args.task, success)

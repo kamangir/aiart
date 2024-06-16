@@ -3,7 +3,7 @@ from articraft import VERSION
 from articraft.ComfyUI import NAME
 from articraft.ComfyUI.functions import func
 from articraft.logger import logger
-from blueness.argparse.generic import ending
+from blueness.argparse.generic import sys_exit
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
 parser.add_argument(
@@ -25,4 +25,4 @@ if args.task == "task":
 else:
     success = None
 
-ending(logger, NAME, args.task, success)
+sys_exit(logger, NAME, args.task, success)
