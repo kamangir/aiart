@@ -2,6 +2,7 @@ import argparse
 from articraft.script import NAME
 from articraft.script.functions import flatten
 from articraft.logger import logger
+from blueness.argparse.generic import ending
 
 
 parser = argparse.ArgumentParser(NAME)
@@ -40,7 +41,6 @@ if args.task == "flatten":
         args.slice_by,
     )
 else:
-    logger.error(f"-{NAME}: {args.task}: command not found.")
+    success = None
 
-if not success:
-    logger.error(f"-{NAME}: {args.task}: failed.")
+ending(logger, NAME, args.task, success)
