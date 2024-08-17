@@ -56,4 +56,4 @@ aiart generate image \
 
 [![PyPI version](https://img.shields.io/pypi/v/articraft.svg)](https://pypi.org/project/articraft/)
 
-an 🚀 [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin.
+an 🪄 [`awesome-bash-cli`](https://github.com/kamangir/awesome-bash-cli) (`abcli`) plugin.
