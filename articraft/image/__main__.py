@@ -1,9 +1,14 @@
 import argparse
 import cv2
-from abcli import file
-from articraft.image import NAME
-from articraft.logger import logger
+
+from blueness import module
 from blueness.argparse.generic import sys_exit
+from blue_objects import file
+
+from articraft import NAME
+from articraft.logger import logger
+
+NAME = module.name(__file__, NAME)
 
 
 parser = argparse.ArgumentParser(NAME)
