@@ -54,7 +54,7 @@ function aiart_generate_image() {
             $app_name
 
     [[ "$do_sign" == 1 ]] && local footer=$prompt || local footer=""
-    python3 -m abcli.modules.host \
+    python3 -m blue_objects.host \
         add_signature \
         --application $($app_name version) \
         --filename $abcli_object_path/$filename.png \

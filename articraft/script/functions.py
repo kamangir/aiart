@@ -1,10 +1,15 @@
 import emoji
 from functools import reduce
 import re
-from abcli import file
+
+from blueness import module
+from blue_objects import file
 from abcli.plugins.metadata import post as post_metadata, MetadataSourceType
-from articraft.script import NAME
+
+from articraft import NAME
 from articraft.logger import logger
+
+NAME = module.name(__file__, NAME)
 
 
 def flatten(

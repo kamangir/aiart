@@ -31,7 +31,7 @@ function aiart_transform() {
 
     abcli_download
 
-    mkdir -p $abcli_object_root/$destination_object/raw/
+    mkdir -p $ABCLI_OBJECT_ROOT/$destination_object/raw/
 
     local list_of_images=""
     local i=0
@@ -42,7 +42,7 @@ function aiart_transform() {
         python3 -m articraft.image \
             convert \
             --source $abcli_object_path/$filename \
-            --destination $abcli_object_root/$destination_object/raw/${filename%.*}-source.png \
+            --destination $ABCLI_OBJECT_ROOT/$destination_object/raw/${filename%.*}-source.png \
             ${@:4}
 
         ((i = i + 1))
