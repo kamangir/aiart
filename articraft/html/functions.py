@@ -3,9 +3,14 @@ from typing import List, Tuple
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from abcli.logger import crash_report
-from articraft.html import NAME
+
+from blueness import module
+from blue_options.logger import crash_report
+
+from articraft import NAME
 from articraft.logger import logger
+
+NAME = module.name(__file__, NAME)
 
 
 def ingest_poetry_from_url(
