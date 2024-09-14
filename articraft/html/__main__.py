@@ -1,9 +1,13 @@
 import argparse
-from articraft import VERSION
-from articraft.html import NAME
+
+from blueness import module
+from blueness.argparse.generic import sys_exit
+
+from articraft import VERSION, NAME
 from articraft.html.functions import ingest_url
 from articraft.logger import logger
-from blueness.argparse.generic import sys_exit
+
+NAME = module.name(__file__, NAME)
 
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")

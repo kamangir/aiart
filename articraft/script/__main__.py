@@ -1,11 +1,15 @@
 import argparse
-from articraft.script import NAME
-from articraft.script.functions import flatten
-from articraft.logger import logger
+
+from blueness import module
 from blueness.argparse.generic import sys_exit
 
+from articraft import NAME, VERSION
+from articraft.script.functions import flatten
+from articraft.logger import logger
 
-parser = argparse.ArgumentParser(NAME)
+NAME = module.name(__file__, NAME)
+
+parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
 parser.add_argument(
     "task",
     type=str,
