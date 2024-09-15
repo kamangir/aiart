@@ -25,6 +25,6 @@ function aiart_publish() {
         prefix=$generator \
         $abcli_object_name
 
-    abcli_tag set $abcli_object_name \
+    abcli_tags set $abcli_object_name \
         published,$generator,aiart
 }

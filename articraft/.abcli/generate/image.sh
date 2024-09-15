@@ -49,7 +49,7 @@ function aiart_generate_image() {
         $abcli_object_path/$filename.png
 
     [[ "$do_tag" == 1 ]] &&
-        abcli_tag set \
+        abcli_tags set \
             $abcli_object_name \
             $app_name
 

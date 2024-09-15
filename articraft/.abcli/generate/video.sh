@@ -76,7 +76,7 @@ function aiart_generate_video() {
     fi
 
     if [ "$dryrun" == 0 ]; then
-        abcli_tag set \
+        abcli_tags set \
             $abcli_object_name \
             $app_name
     fi
