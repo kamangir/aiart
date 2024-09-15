@@ -71,7 +71,7 @@ function aiart_transform() {
     done
 
     [[ "$do_tag" == 1 ]] &&
-        abcli_tag set \
+        abcli_tags set \
             $destination_object \
             aiart
 
