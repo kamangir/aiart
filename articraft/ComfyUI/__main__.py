@@ -1,9 +1,14 @@
 import argparse
-from articraft import VERSION
-from articraft.ComfyUI import NAME
+
+from blueness import module
+from blueness.argparse.generic import sys_exit
+
+from articraft import VERSION, NAME
 from articraft.ComfyUI.functions import func
 from articraft.logger import logger
-from blueness.argparse.generic import sys_exit
+
+NAME = module.name(__file__, NAME)
+
 
 parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
 parser.add_argument(
