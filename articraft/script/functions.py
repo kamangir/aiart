@@ -4,7 +4,7 @@ import re
 
 from blueness import module
 from blue_objects import file
-from abcli.plugins.metadata import post as post_metadata, MetadataSourceType
+from blue_objects.metadata import post as post_metadata, MetadataSourceType
 
 from articraft import NAME
 from articraft.logger import logger
