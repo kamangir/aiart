@@ -3,14 +3,14 @@ import argparse
 from blueness import module
 from blueness.argparse.generic import sys_exit
 
-from articraft import VERSION, NAME
+from articraft import NAME
 from articraft.ComfyUI.functions import func
 from articraft.logger import logger
 
 NAME = module.name(__file__, NAME)
 
 
-parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
+parser = argparse.ArgumentParser(NAME)
 parser.add_argument(
     "task",
     type=str,
