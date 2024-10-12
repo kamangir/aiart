@@ -22,4 +22,4 @@ function ComfyUI() {
 
 }
 
-abcli_source_path - caller,suffix=/ComfyUI
+abcli_source_caller_suffix_path /ComfyUI

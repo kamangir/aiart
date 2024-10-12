@@ -4,6 +4,6 @@ ICON = "🎨"
 
 DESCRIPTION = f"{ICON} tools for ai artists."
 
-VERSION = "2.76.1"
+VERSION = "2.77.1"
 
 MARQUEE = "https://github.com/kamangir/openai-commands/raw/main/assets/DALL-E.png?raw=1"

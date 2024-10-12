@@ -26,4 +26,4 @@ function aiart_generate() {
     return 1
 }
 
-abcli_source_path - caller,suffix=/generate
+abcli_source_caller_suffix_path /generate
